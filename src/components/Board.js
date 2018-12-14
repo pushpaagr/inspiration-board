@@ -18,12 +18,9 @@ class Board extends Component {
 
 
 
-
-
   render() {
 
     const emoji = require("emoji-dictionary");
-
 
     let cardCollection = this.state.cards;
 
