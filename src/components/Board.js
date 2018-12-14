@@ -26,6 +26,8 @@ class Board extends Component {
       this.setState({
         cards: response.data,
       });
+      console.log(this.state.cards);
+
     })
     .catch((error) => {
       this.setState({
@@ -55,7 +57,27 @@ class Board extends Component {
         error: error.message
       });
     })
+  }
 
+  addcard = (newcard) => {
+    const ADD_CARD = `https://inspiration-board.herokuapp.com/boards/Pushpa/cards?text=${newcard.text}&emoji=${newcard.emoji}`
+
+    axios.post(ADD_CARD)
+    .then((response) => {
+      let cardArray = this.state.cards
+      cardArray.push(response.data)
+
+      this.setState({
+        cards: cardArray
+      });
+
+
+    })
+    .catch((error) => {
+      this.setState({
+        error: error.message
+      })
+    })
 
 
 
@@ -81,8 +103,14 @@ class Board extends Component {
 
     return (
       <div>
-        {cards}
+        <div>
+          {cards}
+        </div>
+
+        <NewCardForm addCardCallback={this.addcard} />
+
       </div>
+
     )
   }
 
