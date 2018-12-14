@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from '../Board';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Board', () => {
   test('that it matches an existing snapshot', () => {
@@ -9,11 +9,5 @@ describe('Board', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // it('matches the deep snapshot', () => {
-  //   const wrapper = mount( <Board />);
-  //
-  //   expect(wrapper).toMatchSnapshot();
-  //   wrapper.unmount();
-  // });
 
 });

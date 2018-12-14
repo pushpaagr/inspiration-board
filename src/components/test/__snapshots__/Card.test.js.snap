@@ -1,29 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card matches the deep snapshot 1`] = `
-<Card
-  emoji="Take a nap2"
-  text="this is test text string2"
->
-  <div
-    className="card"
-  >
-    <h1>
-      this is test text string2
-    </h1>
-    <p>
-      Take a nap2
-    </p>
-  </div>
-</Card>
-`;
-
 exports[`Card renders without crashing even with no text or emoji data 1`] = `
 <div
   className="card"
 >
   <h1 />
   <p />
+  <button
+    aria-label="Remove"
+    onClick={[Function]}
+    type="button"
+  >
+    Remove
+  </button>
 </div>
 `;
 
@@ -37,5 +26,12 @@ exports[`Card that it matches an existing snapshot 1`] = `
   <p>
     Take a nap
   </p>
+  <button
+    aria-label="Remove"
+    onClick={[Function]}
+    type="button"
+  >
+    Remove
+  </button>
 </div>
 `;

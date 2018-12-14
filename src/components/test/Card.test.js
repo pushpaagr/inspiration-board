@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Card', () => {
   test('that it matches an existing snapshot', () => {
@@ -20,21 +20,11 @@ describe('Card', () => {
         <Card
         text=""
         emoji=""
+        deleteCardCallback={() => {}}
         />);
 
         expect(wrapper).toMatchSnapshot();
       });
-
-      // it('matches the deep snapshot', () => {
-      //   const wrapper = mount(
-      //     <Card
-      //     text="this is test text string2"
-      //     emoji="Take a nap2"
-      //     />);
-      //
-      //   expect(wrapper).toMatchSnapshot();
-      //   wrapper.unmount();
-      // });
 
 
 
