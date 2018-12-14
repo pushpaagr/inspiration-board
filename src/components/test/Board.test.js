@@ -9,11 +9,11 @@ describe('Board', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('matches the deep snapshot', () => {
-    const wrapper = mount( <Board />);
-
-    expect(wrapper).toMatchSnapshot();
-    wrapper.unmount();
-  });
+  // it('matches the deep snapshot', () => {
+  //   const wrapper = mount( <Board />);
+  //
+  //   expect(wrapper).toMatchSnapshot();
+  //   wrapper.unmount();
+  // });
 
 });

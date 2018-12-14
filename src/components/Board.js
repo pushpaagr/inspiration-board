@@ -35,6 +35,32 @@ class Board extends Component {
   }
 
 
+  deletecard = (id) => {
+
+    const DELETE_CARD = `https://inspiration-board.herokuapp.com/cards/${id}`
+
+    axios.delete(DELETE_CARD)
+    .then(() => {
+      const cardArray = this.state.cards
+      const removeCardIndex = cardArray.findIndex(card => card.id === id)
+      cardArray.splice(removeCardIndex, 1)
+
+      this.setState({
+        cards: cardArray
+      });
+
+    })
+    .catch((error) => {
+      this.setState({
+        error: error.message
+      });
+    })
+
+
+
+
+  }
+
   render() {
 
     const emoji = require("emoji-dictionary");
@@ -47,8 +73,10 @@ class Board extends Component {
       console.log(card.text);
       return <Card
         key={card.id}
+        id={card.id}
         text={card.text}
-        emoji={emoji.getUnicode(`${card.emoji}`)} />
+        emoji={emoji.getUnicode(`${card.emoji}`)}
+        deleteCardCallback={this.deletecard}/>
     });
 
     return (

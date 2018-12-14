@@ -25,16 +25,16 @@ describe('Card', () => {
         expect(wrapper).toMatchSnapshot();
       });
 
-      it('matches the deep snapshot', () => {
-        const wrapper = mount(
-          <Card
-          text="this is test text string2"
-          emoji="Take a nap2"
-          />);
-
-        expect(wrapper).toMatchSnapshot();
-        wrapper.unmount();
-      });
+      // it('matches the deep snapshot', () => {
+      //   const wrapper = mount(
+      //     <Card
+      //     text="this is test text string2"
+      //     emoji="Take a nap2"
+      //     />);
+      //
+      //   expect(wrapper).toMatchSnapshot();
+      //   wrapper.unmount();
+      // });
 
 
 
