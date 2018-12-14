@@ -12,9 +12,34 @@ class Board extends Component {
     super();
 
     this.state = {
-      cards: CARD_DATA.cards,
+      cards: [],
     };
   }
+
+
+  componentDidMount() {
+    console.log("this did mount");
+    const GET_ALL_CARDS_URL = "https://inspiration-board.herokuapp.com/boards/Pushpa/cards";
+
+    axios.get(GET_ALL_CARDS_URL)
+    .then((response) => {
+      console.log(response.data);
+      this.setState({
+        cards: response.data,
+      });
+    })
+    .catch((error) => {
+      this.setState({
+        error: error.message
+      });
+    });
+
+  }
+
+
+
+
+
 
 
 
@@ -25,8 +50,11 @@ class Board extends Component {
     let cardCollection = this.state.cards;
 
     const cards = cardCollection.map((card, i) => {
+      card = card.card;
+      console.log(card);
+      console.log(card.text);
       return <Card
-        key={i}
+        key={card.id}
         text={card.text}
         emoji={emoji.getUnicode(`${card.emoji}`)} />
     });

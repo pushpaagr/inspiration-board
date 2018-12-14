@@ -11,8 +11,8 @@ class Card extends Component {
 
     return (
       <div className="card">
-        {this.props.text}
-        {this.props.emoji}
+        <h1>{this.props.text}</h1>
+        <p>{this.props.emoji}</p>
       </div>
     )
   }
