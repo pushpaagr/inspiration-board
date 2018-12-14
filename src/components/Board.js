@@ -18,7 +18,6 @@ class Board extends Component {
 
 
   componentDidMount() {
-    console.log("this did mount");
     const GET_ALL_CARDS_URL = "https://inspiration-board.herokuapp.com/boards/Pushpa/cards";
 
     axios.get(GET_ALL_CARDS_URL)
@@ -33,14 +32,7 @@ class Board extends Component {
         error: error.message
       });
     });
-
   }
-
-
-
-
-
-
 
 
   render() {
@@ -68,7 +60,11 @@ class Board extends Component {
 
 }
 
+
+
+
 Board.propTypes = {
+
 
 };
 
